@@ -9,7 +9,7 @@ public class ArrayPractice {
 		Integer[] randArray = new Integer[20];
 
 		for (int i = 0; i < 20; i++) {
-			randArray[i] = (Integer) Math.round(Math.random() * 399) + 1;
+			randArray[i] = (int) Math.round(Math.random() * 399) + 1;
 		}
 
 		System.out.println("Unsorted:" + Arrays.toString(randArray));

@@ -1,0 +1,53 @@
+1.  a) 20
+    b) 16
+
+2. double[][] arr = new double[10][5];
+
+3. 
+    a) 10 9 8 7
+    b) 5 10 15
+    c) 10 9 8 7
+    d) 1 7 13
+       2 8 14
+       3 9 15
+
+4.  a) int[][] arr = new int[5][4];
+    b)  for(int y=0;y<5;y++) {
+            for(int x=0;x<4;x++) {
+                arr[y][x] = 3;
+            }
+        }
+    c)  int grandTotal = 0;
+        for(int y=0;y<5;y++) {
+            for(int x=0;x<4;x++) {
+                grandTotal += arr[y][x];
+            }
+        }
+    d)  int row2sum = 0;
+        for(int x=0;x<4;x++) {
+            row2sum += arr[1][x];
+        }
+    e)  int negSum = 0;
+        for(int y=0;y<5;y++) {
+            for(int x=0;x<4;x++) {
+                if(arr[y][x] < 0) {
+                    negSum += arr[y][x];
+                }
+            }
+        }
+    f)  int largest = arr[0][0];
+        for(int y=0;y<5;y++) {
+            for(int x=0;x<4;x++) {
+                if(arr[y][x] > largest) {
+                    largest = arr[y][x];
+                }
+            }
+        }
+
+5.  for(int y=0;y<4;y++) {
+        int rowSum = 0;
+        for(int x=0;x<data[y].length;x++) {
+            rowSum += arr[y][x];
+        }
+        System.out.println(rowSum);
+    }
