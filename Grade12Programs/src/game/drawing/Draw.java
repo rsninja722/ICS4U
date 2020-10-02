@@ -42,7 +42,7 @@ public class Draw extends JPanel {
     public static int windowedWidth; // width to return to when exiting full screen
     public static int windowedHeight; // width to return to when exiting full screen
 
-    private static VolatileImage buffer; // final buffer
+    public static VolatileImage buffer; // final buffer
     private static VolatileImage buffer1; // buffer used for scaling
     private static VolatileImage buffer2; // buffer used for rotation
 
