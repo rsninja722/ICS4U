@@ -316,6 +316,22 @@ public class Draw extends JPanel {
         desiredHeight = h;
     }
 
+    public static void undecorate() {
+        frame.dispose();
+        frame = new JFrame(GameJava.frameTitle);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+        frame.add(panel, BorderLayout.CENTER);
+        frame.setUndecorated(true);
+        frame.setVisible(true);
+
+        frame.setSize(GameJava.gw, GameJava.gh);
+
+        frame.setLocationRelativeTo(null);
+        
+    }
+
     // __________________________________________ methods that should only be used by gamej __________________________________________
 
     // creates window and sets up buffers

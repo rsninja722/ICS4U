@@ -1,5 +1,14 @@
 package GUIPrograms;
 
+
+/**
+ * James N 
+ * arrow keys to pan
+ * w/s to zoom
+ * a/d to change steps
+ * f3 for debug
+ */
+
 import game.*;
 import game.drawing.Draw;
 
