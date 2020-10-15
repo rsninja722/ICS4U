@@ -465,29 +465,30 @@ public class Draw extends JPanel {
         double tempSizeAndPadding = tempSize + (tempSize / 2);
         
         // account for window being moved to different screen https://stackoverflow.com/questions/2234476/how-to-detect-the-current-display-with-java
-        GraphicsDevice currentScreen = frame.getGraphicsConfiguration().getDevice();
-        GraphicsDevice[] allScreens = graphicsEnviro.getScreenDevices();
-        int screenIndex = -1;
-        for (int i = 0; i < allScreens.length; i++) {
-            if (allScreens[i].equals(currentScreen))
-            {
-                screenIndex = i;
-                break;
+        if(GameJava.frameCount % 10 == 0 ) {
+            GraphicsDevice currentScreen = frame.getGraphicsConfiguration().getDevice();
+            GraphicsDevice[] allScreens = graphicsEnviro.getScreenDevices();
+            int screenIndex = -1;
+            for (int i = 0; i < allScreens.length; i++) {
+                if (allScreens[i].equals(currentScreen))
+                {
+                    screenIndex = i;
+                    break;
+                }
+            }
+            if(lastScreenIndex != screenIndex) {
+                lastScreenIndex = screenIndex; 
+                
+                graphicsConfig = allScreens[screenIndex].getDefaultConfiguration();
+                
+                buffer = graphicsConfig.createCompatibleVolatileImage(GameJava.gw, GameJava.gh);
+                buffer1 = graphicsConfig.createCompatibleVolatileImage(GameJava.gw, GameJava.gh);
+                buffer2 = graphicsConfig.createCompatibleVolatileImage((int) tempSizeAndPadding, (int) tempSizeAndPadding);
+                bufferGraphics = buffer.createGraphics();
+                buffer1Graphics = buffer1.createGraphics();
+                buffer2Graphics = buffer2.createGraphics();
             }
         }
-        if(lastScreenIndex != screenIndex) {
-        	lastScreenIndex = screenIndex; 
-        	
-	        graphicsConfig = allScreens[screenIndex].getDefaultConfiguration();
-	        
-	        buffer = graphicsConfig.createCompatibleVolatileImage(GameJava.gw, GameJava.gh);
-	        buffer1 = graphicsConfig.createCompatibleVolatileImage(GameJava.gw, GameJava.gh);
-	        buffer2 = graphicsConfig.createCompatibleVolatileImage((int) tempSizeAndPadding, (int) tempSizeAndPadding);
-	        bufferGraphics = buffer.createGraphics();
-	        buffer1Graphics = buffer1.createGraphics();
-	        buffer2Graphics = buffer2.createGraphics();
-        }
-        
 
         // resize buffers
         boolean sizeChange = GameJava.gw != lastW || GameJava.gh != lastH;
