@@ -64,6 +64,8 @@ public class LoopManager {
                     GameJava.updateCount++;
                     // set clicked keys to held
                     Input.handleHolding();
+                    // reset scroll
+                    Input.scroll = 0;
                 }
             }
             System.out.println("Thread " + threadName + " exiting.");
